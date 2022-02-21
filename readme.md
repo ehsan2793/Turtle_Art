@@ -1,1 +1,0 @@
-![](../../../../var/folders/_s/dsdbd9px6c1b_yy0l7rf5y9h0000gn/T/me.damir.dropover-mac/Screenshots/Screen Shot 2022-02-21 at 12.48.54 PM.png)
