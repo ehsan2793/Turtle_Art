@@ -1,25 +1,35 @@
 import random
-import turtle
 from turtle import Turtle, Screen
 
-arr = ['red', 'cyan', 'green', 'DeepPink', 'purple', 'brown', 'black']
-moves = [0, 90, -90]
+import colorgram
+
+colors = colorgram.extract('image.png', 20)
+rgb_colors = []
+for color in colors:
+    r = color.rgb.r
+    g = color.rgb.b
+    b = color.rgb.b
+    rgb_colors.append((r, g, b))
+
 screen = Screen()
 screen.colormode(255)
 jimmy = Turtle()
-jimmy.pensize(12)
-jimmy.speed(1000)
+n = 1
+y = 30
+jimmy.penup()
+jimmy.setposition(-100.00,-200)
+jimmy.pendown()
+while n < 10:
+    for i in range(5):
+        jimmy.dot(20,random.choice(rgb_colors))
+        jimmy.penup()
+        jimmy.forward(50)
+        jimmy.pendown()
+        jimmy.dot(20, random.choice(rgb_colors))
+    jimmy.penup()
+    jimmy.setposition(-100.00, -200 + y)
+    n += 1
+    y += 30
 
-
-def get_random_color():
-    return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-
-
-# # while True:
-for _ in range(100):
-    jimmy.forward(3)
-    jimmy.color(get_random_color())
-    jimmy.right(random.choice(moves))
-    jimmy.forward(10)
 
 screen.exitonclick()
